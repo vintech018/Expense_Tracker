@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BankRoll | Expense Tracker</title>
+  <link rel="stylesheet" href="tracker.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="tracker.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo-section">
+      <img src="logo.png" alt="BankRoll Logo" />
+      <h1>BankRoll</h1>
+    </div>
+    <button id="logoutButton">Logout</button>
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <h2>Welcome Back 👋</h2>
+      <p style="color: #aaa;">Your financial kingdom in control</p>
+
+      <!-- 🔢 Summary Cards -->
+      <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+        <div class="summary-card">
+          <h3>Total</h3>
+          <p id="totalAmount">₹0.00</p>
+        </div>
+        <div class="summary-card" style="background-color: #174135;">
+          <h3>Income</h3>
+          <p id="incomeAmount">₹0.00</p>
+        </div>
+        <div class="summary-card" style="background-color: #43172e;">
+          <h3>Expenses</h3>
+          <p id="expenseAmount">₹0.00</p>
+        </div>
+      </div>
+
+      <!-- 🧾 Expense Form -->
+      <div style="margin-top: 2rem;">
+        <h3>Add Expense</h3>
+        <form id="expenseForm" style="display: flex; flex-direction: column; gap: 1rem;">
+          <input type="text" id="description" placeholder="Description" required />
+          <input type="number" id="amount" placeholder="Amount" required />
+          <select id="category" required>
+            <option value="" disabled selected>Select Category</option>
+            <option value="income">Income</option>
+            <option value="food">Food</option>
+            <option value="transport">Transport</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="utilities">Utilities</option>
+            <option value="other">Other</option>
+          </select>
+          <button type="submit">Add</button>
+        </form>
+      </div>
+
+      <!-- 💸 Recent Transactions -->
+      <div style="margin-top: 2rem;">
+        <h3>Recent Transactions</h3>
+        <ul id="transactionsList"></ul>
+      </div>
+
+      <!-- 📊 Pie Chart -->
+      <div style="margin-top: 2rem;">
+        <h3>Spending Breakdown</h3>
+        <canvas id="expenseChart" width="400" height="200"></canvas>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

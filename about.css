@@ -10,6 +10,7 @@ body {
     color: #e3e3e3; /* Lighter text for dark mode */
     display: flex;
     flex-direction: column;
+    transition: background-color 0.4s ease, color 0.4s ease; /* Smooth transition */
 }
 
 /* Header */
@@ -23,6 +24,7 @@ header {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Logo Section */
 header .logo-section {
     display: flex;
     align-items: center;
@@ -43,6 +45,7 @@ header .bankroll-title {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(235, 211, 248, 0.8);
 }
 
+/* Navigation Links */
 nav ul {
     list-style-type: none;
     display: flex;
@@ -108,6 +111,29 @@ main {
     color: #e3c9d9;
 }
 
+/* Video Section */
+.video-section {
+    margin-top: 60px;
+    background-color: rgba(30, 10, 50, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(173, 73, 225, 0.5);
+}
+
+.video-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #d68fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.video-section video {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 10px;
+}
+
 /* Team Section */
 .team-section {
     display: flex;
@@ -116,6 +142,7 @@ main {
     flex-wrap: wrap;
     margin-top: 80px;
 }
+
 .team-wrapper {
     margin-top: 100px;
     text-align: center;
@@ -166,7 +193,6 @@ main {
     color: #e3c9d9; /* soft light pinkish color for dark mode */
 }
 
-
 /* Footer */
 footer {
     text-align: center;
@@ -212,8 +238,11 @@ footer .social-links a:hover {
     .about-content {
         padding: 30px;
     }
+
+    .video-section {
+        padding: 20px;
+    }
 }
-/* Existing styles remain unchanged... */
 
 /* Modal Styles */
 .modal {
@@ -253,4 +282,73 @@ footer .social-links a:hover {
 
 .close-btn:hover {
     color: #fff;
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+    font-size: 1.6rem;
+    background-color: transparent;
+    color: #f0e6f1;
+    border: 2px solid #d68fff;
+    border-radius: 50%;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    background-color: rgba(214, 143, 255, 0.2);
+    transform: rotate(20deg);
+}
+
+/* Animate dark mode transition */
+body, header, footer, main, .about-content, .video-section, .team-member, .modal-content {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Modal Fade-in Animation */
+.modal {
+    animation: fadeInModal 0.3s ease-in-out;
+}
+
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background for dark mode */
+    color: #e3e3e3; /* Lighter text for dark mode */
+}
+
+body.dark-mode header {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+body.dark-mode footer {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+body.dark-mode .team-member {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .about-content {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .video-section {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode #darkModeToggle {
+    background-color: #d68fff;
+    color: #121212;
 }

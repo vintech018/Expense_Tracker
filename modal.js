@@ -23,36 +23,41 @@ const memberDetails = {
 
 function showModal(id) {
   const modal = document.getElementById("teamModal");
+  const modalContent = document.getElementById("modalDetails");
+
+  if (!modal || !modalContent || !memberDetails[id]) return;
+
   const content = memberDetails[id];
-  document.getElementById("modalDetails").innerHTML = `
+  modalContent.innerHTML = `
     <h2>${content.name}</h2>
     <h4>${content.role}</h4>
     <p>${content.message}</p>
   `;
   modal.style.display = "flex";
+  modal.classList.add("fade-in");
 }
 
 function closeModal() {
-  document.getElementById("teamModal").style.display = "none";
+  const modal = document.getElementById("teamModal");
+  if (modal) modal.style.display = "none";
 }
 
-// Dark Mode Toggle
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("darkModeToggle");
 
-  // Check for saved theme in localStorage
+  // Set dark mode on load if enabled
   if (localStorage.getItem("darkMode") === "enabled") {
     document.body.classList.add("dark-mode");
   }
 
-  toggle.addEventListener("click", () => {
+  // Toggle dark mode
+  toggle?.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
-    
-    // Save preference in localStorage
-    if (document.body.classList.contains("dark-mode")) {
-      localStorage.setItem("darkMode", "enabled");
-    } else {
-      localStorage.setItem("darkMode", "disabled");
-    }
+    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode") ? "enabled" : "disabled");
+  });
+
+  // Allow ESC key to close modal
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
   });
 });

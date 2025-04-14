@@ -20,8 +20,8 @@
 
     <nav>
       <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="tracker.html">Tracker</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Tracker</a></li>
         <li><a href="about.html" class="active">About</a></li>
       </ul>
     </nav>
@@ -47,36 +47,46 @@
         Your browser does not support the video tag.
       </video>
     </section>
+<section class="team-wrapper">
+  <h2 class="team-heading">Meet the Team</h2>
+  <div class="team-section">
 
-    <section class="team-wrapper">
-      <h2 class="team-heading">Meet the Team</h2>
-      <div class="team-section">
+    <div class="team-member" onclick="showModal('vaibhav')">
+      <img src="vaibhav.jpg" alt="Vaibhav - CEO" />
+      <h3>Vaibhav</h3>
+      <p>Founder & CEO</p>
+      <a href="https://www.linkedin.com/in/vaibhav-chawla-124019243/" target="_blank" onclick="event.stopPropagation()">
+        <i class="fa-brands fa-linkedin linkedin-icon"></i>
+      </a>
+    </div>
 
-        <div class="team-member" onclick="showModal('vaibhav')">
-          <img src="vaibhav.jpg" alt="Vaibhav - CEO" />
-          <h3>Vaibhav</h3>
-          <p>Founder & CEO</p>
-        </div>
+    <div class="team-member" onclick="showModal('maanit')">
+      <img src="maanit.jpg" alt="Maanit - Developer" />
+      <h3>Maanit</h3>
+      <p>Lead Developer</p>
+      <a href="https://www.linkedin.com/in/maanit-b62494332/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" onclick="event.stopPropagation()">
+        <i class="fa-brands fa-linkedin linkedin-icon"></i>
+      </a>
+    </div>
 
-        <div class="team-member" onclick="showModal('maanit')">
-          <img src="maanit.jpg" alt="Maanit - Developer" />
-          <h3>Maanit</h3>
-          <p>Lead Developer</p>
-        </div>
+    <div class="team-member" onclick="showModal('medhansh')">
+      <img src="medhansh.jpg" alt="Medhansh - UX Designer" />
+      <h3>Medhansh</h3>
+      <p>Product & UX Design</p>
+      <a href="https://www.linkedin.com/in/medhansh-bhoria-b9b494354?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" onclick="event.stopPropagation()">
+        <i class="fa-brands fa-linkedin linkedin-icon"></i>
+      </a>
+    </div>
 
-        <div class="team-member" onclick="showModal('medhansh')">
-          <img src="medhansh.jpg" alt="Medhansh - UX Designer" />
-          <h3>Medhansh</h3>
-          <p>Product & UX Design</p>
-        </div>
+    <div class="team-member" onclick="showModal('dhruv')">
+      <img src="dhruv.jpg" alt="Dhruv Nasra - Finance" />
+      <h3>Dhruv Nasra</h3>
+      <p>Finance & Strategy</p>
+    </div>
 
-        <div class="team-member" onclick="showModal('dhruv')">
-          <img src="dhruv.jpg" alt="Dhruv Nasra - Finance" />
-          <h3>Dhruv Nasra</h3>
-          <p>Finance & Strategy</p>
-        </div>
-      </div>
-    </section>
+  </div>
+</section>
+
   </main>
 
   <footer>

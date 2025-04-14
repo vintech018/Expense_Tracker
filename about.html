@@ -6,6 +6,7 @@
   <title>About | BankRoll</title>
   <link rel="stylesheet" href="about.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -15,7 +16,6 @@
       <h1 class="bankroll-title">BankRoll</h1>
     </div>
 
-    <!-- 🔥 Dark Mode Toggle -->
     <button id="darkModeToggle" class="dark-toggle">🌙</button>
 
     <nav>
@@ -28,7 +28,7 @@
   </header>
 
   <main>
-    <section class="about-content">
+    <section class="about-content" data-aos="fade-up">
       <h2>Get to Know BankRoll</h2>
       <p>
         BankRoll is your go-to app for smart expense tracking. Whether you're budgeting monthly bills or saving for something big,
@@ -40,53 +40,53 @@
       </p>
     </section>
 
-    <section class="video-section">
+    <section class="video-section" data-aos="zoom-in-up">
       <h2>Watch the BankRoll Project Overview</h2>
       <video controls width="100%" height="auto">
         <source src="assets/bankroll-description.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </section>
-<section class="team-wrapper">
-  <h2 class="team-heading">Meet the Team</h2>
-  <div class="team-section">
 
-    <div class="team-member" onclick="showModal('vaibhav')">
-      <img src="vaibhav.jpg" alt="Vaibhav - CEO" />
-      <h3>Vaibhav</h3>
-      <p>Founder & CEO</p>
-      <a href="https://www.linkedin.com/in/vaibhav-chawla-124019243/" target="_blank" onclick="event.stopPropagation()">
-        <i class="fa-brands fa-linkedin linkedin-icon"></i>
-      </a>
-    </div>
+    <section class="team-wrapper">
+      <h2 class="team-heading" data-aos="fade-up">Meet the Team</h2>
+      <div class="team-section">
 
-    <div class="team-member" onclick="showModal('maanit')">
-      <img src="maanit.jpg" alt="Maanit - Developer" />
-      <h3>Maanit</h3>
-      <p>Lead Developer</p>
-      <a href="https://www.linkedin.com/in/maanit-b62494332/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" onclick="event.stopPropagation()">
-        <i class="fa-brands fa-linkedin linkedin-icon"></i>
-      </a>
-    </div>
+        <div class="team-member" onclick="showModal('vaibhav')" data-aos="fade-up" data-aos-delay="100">
+          <img src="vaibhav.jpg" alt="Vaibhav - CEO" />
+          <h3>Vaibhav</h3>
+          <p>Founder & CEO</p>
+          <a href="https://www.linkedin.com/in/vaibhav-chawla-124019243/" target="_blank" onclick="event.stopPropagation()">
+            <i class="fa-brands fa-linkedin linkedin-icon"></i>
+          </a>
+        </div>
 
-    <div class="team-member" onclick="showModal('medhansh')">
-      <img src="medhansh.jpg" alt="Medhansh - UX Designer" />
-      <h3>Medhansh</h3>
-      <p>Product & UX Design</p>
-      <a href="https://www.linkedin.com/in/medhansh-bhoria-b9b494354?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" onclick="event.stopPropagation()">
-        <i class="fa-brands fa-linkedin linkedin-icon"></i>
-      </a>
-    </div>
+        <div class="team-member" onclick="showModal('maanit')" data-aos="fade-up" data-aos-delay="200">
+          <img src="maanit.jpg" alt="Maanit - Developer" />
+          <h3>Maanit</h3>
+          <p>Lead Developer</p>
+          <a href="https://www.linkedin.com/in/maanit-b62494332/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" onclick="event.stopPropagation()">
+            <i class="fa-brands fa-linkedin linkedin-icon"></i>
+          </a>
+        </div>
 
-    <div class="team-member" onclick="showModal('dhruv')">
-      <img src="dhruv.jpg" alt="Dhruv Nasra - Finance" />
-      <h3>Dhruv Nasra</h3>
-      <p>Finance & Strategy</p>
-    </div>
+        <div class="team-member" onclick="showModal('medhansh')" data-aos="fade-up" data-aos-delay="300">
+          <img src="medhansh.jpg" alt="Medhansh - UX Designer" />
+          <h3>Medhansh</h3>
+          <p>Product & UX Design</p>
+          <a href="https://www.linkedin.com/in/medhansh-bhoria-b9b494354?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" onclick="event.stopPropagation()">
+            <i class="fa-brands fa-linkedin linkedin-icon"></i>
+          </a>
+        </div>
 
-  </div>
-</section>
+        <div class="team-member" onclick="showModal('dhruv')" data-aos="fade-up" data-aos-delay="400">
+          <img src="dhruv.jpg" alt="Dhruv Nasra - Finance" />
+          <h3>Dhruv Nasra</h3>
+          <p>Finance & Strategy</p>
+        </div>
 
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -99,7 +99,6 @@
     <p>&copy; 2025 BankRoll. Built with purpose.</p>
   </footer>
 
-  <!-- Modal -->
   <div class="modal" id="teamModal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -107,8 +106,11 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
-  <script src="modal.js"></script>  
+  <script src="modal.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, duration: 1000 });
+</script>
 
 </body>
 </html>

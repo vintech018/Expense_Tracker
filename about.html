@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | BankRoll</title>
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo-section">
+      <img src="logo.png" alt="BankRoll Logo" class="logo" />
+      <h1 class="bankroll-title">BankRoll</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="et.html">Tracker</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-content">
+      <h2>Get to Know BankRoll</h2>
+      <p>
+        BankRoll is your go-to app for smart expense tracking. Whether you're budgeting monthly bills or saving for something big,
+        BankRoll empowers you to understand where your money goes — simply and effectively.
+      </p>
+      <p>
+        Launched in 2025, our mission is to make personal finance management intuitive and stress-free. With a focus on clean
+        design and powerful tools, BankRoll helps users take control of their spending and build better financial habits.
+      </p>
+    </section>
+
+    <section class="team-wrapper">
+      <h2 class="team-heading">Meet the Team</h2>
+      <div class="team-section">
+
+        <div class="team-member" onclick="showModal('vaibhav')">
+          <img src="vaibhav.jpg" alt="Vaibhav - CEO" />
+          <h3>Vaibhav</h3>
+          <p>Founder & CEO</p>
+        </div>
+
+        <div class="team-member" onclick="showModal('maanit')">
+          <img src="maanit.jpg" alt="Maanit - Developer" />
+          <h3>Maanit</h3>
+          <p>Lead Developer</p>
+        </div>
+
+        <div class="team-member" onclick="showModal('medhansh')">
+          <img src="medhansh.jpg" alt="Medhansh - UX Designer" />
+          <h3>Medhansh</h3>
+          <p>Product & UX Design</p>
+        </div>
+
+        <div class="team-member" onclick="showModal('dhruv')">
+          <img src="dhruv.jpg" alt="Dhruv Nasra - Finance" />
+          <h3>Dhruv Nasra</h3>
+          <p>Finance & Strategy</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://wa.me/your-phone-number"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+    </div>
+    <p>&copy; 2025 BankRoll. Built with purpose.</p>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal" id="teamModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div id="modalDetails"></div>
+    </div>
+  </div>
+
+  <script src="modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BankRoll | Sign In or Sign Up</title>
+  <link rel="stylesheet" href="login.css" />
+  <script src="login.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo-section">
+      <img src="logo.png" alt="BankRoll Logo" class="logo" />
+      <h1 class="title">BankRoll</h1>
+    </div>
+  </header>
+
+  <div class="auth-container">
+    <div class="form-container">
+      <!-- Login Form -->
+      <div class="form" id="loginForm">
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Email" />
+        <input type="password" id="password" placeholder="Password" />
+        <button id="loginButton">Login</button>
+        <p>Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
+      </div>
+
+      <!-- Sign Up Form -->
+      <div class="form" id="signupForm" style="display: none;">
+        <h2>Sign Up</h2>
+        <input type="text" id="firstName" placeholder="First Name" />
+        <input type="text" id="lastName" placeholder="Last Name" />
+        <input type="date" id="dob" placeholder="Date of Birth" />
+        <input type="email" id="signupEmail" placeholder="Email" />
+        <input type="password" id="signupPassword" placeholder="Password" />
+        <button id="signupButton">Sign Up</button>
+        <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

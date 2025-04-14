@@ -1,0 +1,160 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark mode background */
+    color: #fff; /* Text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Header */
+  header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  header .logo-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  header .logo {
+    width: 50px;
+    margin-right: 15px;
+  }
+  
+  header .title {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #d68fff;
+  }
+  
+  /* Auth Container */
+  .auth-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    background-color: #1e1e1e; /* Dark mode form background */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+  }
+  
+  /* Form Styles */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  h2 {
+    font-size: 28px;
+    color: #d68fff; /* Light purple for titles */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus {
+    border-color: #d68fff;
+    outline: none;
+  }
+  
+  button {
+    padding: 12px;
+    background-color: #d68fff;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #b364d7;
+  }
+  
+  button:active {
+    background-color: #9c4ec8;
+  }
+  
+  /* Links */
+  p {
+    text-align: center;
+  }
+  
+  a {
+    color: #d68fff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .auth-container {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  }
+  
+  /* Dark Mode Customizations */
+  body[data-theme='dark'] {
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  body[data-theme='dark'] .auth-container {
+    background-color: #1e1e1e;
+  }
+  
+  body[data-theme='dark'] input {
+    background-color: #333;
+  }
+  
+  body[data-theme='dark'] button {
+    background-color: #d68fff;
+  }
+  
+  /* Dark Mode Toggle Button Positioning */
+  #darkModeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #d68fff;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  #darkModeToggle:hover {
+    color: #fff;
+  }
+  

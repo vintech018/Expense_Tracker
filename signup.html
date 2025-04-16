@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login | BankRoll</title>
+  <title>Sign Up | BankRoll</title>
   <link rel="stylesheet" href="login.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
 </head>
@@ -27,24 +27,28 @@
   </header>
 
   <main class="login-container">
-    <form class="login-form" onsubmit="return handleLogin(event)">
-      <h2>Login to BankRoll</h2>
-      
+    <form class="login-form" onsubmit="return handleSignup(event)">
+      <h2>Create Your Account</h2>
+
+      <div class="input-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" required />
+      </div>
+
       <div class="input-group">
         <label for="email">Email</label>
         <input type="email" id="email" required />
       </div>
-      
+
       <div class="input-group">
         <label for="password">Password</label>
         <input type="password" id="password" required />
       </div>
-      
-      <button type="submit" class="login-btn">Login</button>
 
-      <p>
-        Don’t have an account?
-        <a href="signup.html">Sign up</a>
+      <button type="submit" class="login-btn">Sign Up</button>
+
+      <p style="margin-top: 15px; text-align: center;">
+        Already have an account? <a href="login.html">Log in</a>
       </p>
     </form>
   </main>
@@ -54,6 +58,6 @@
   </footer>
 
   <script src="darkmode.js"></script>
-  <script src="login.js"></script>
+  <script src="signup.js"></script>
 </body>
 </html>

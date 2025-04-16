@@ -4,15 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BankRoll | Manage Your Money Smartly</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="index.css" />
-  <script src="modal.js" defer></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <div class="logo-section">
       <img src="logo.png" alt="BankRoll Logo" class="logo" />
       <h1 class="title">BankRoll</h1>
     </div>
+
+    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+
     <nav>
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -20,20 +27,21 @@
         <li><a href="about.html">About</a></li>
       </ul>
     </nav>
-    <button class="dark-mode-toggle" id="darkModeToggle">🌙</button>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-text">
       <h2>Take Control of Your Finances</h2>
       <p>BankRoll helps you track, manage, and grow your money smarter than ever before.</p>
-      <a href="login.html" class="cta-button">Start Tracking</a> <!-- Updated link to login.html -->
+      <a href="login.html" class="cta-button">Start Tracking</a>
     </div>
     <div class="hero-image">
       <img src="finance-animation.gif" alt="Finance Animation" />
     </div>
   </section>
 
+  <!-- Features -->
   <section class="features">
     <div class="feature">
       <i class="fas fa-chart-pie"></i>
@@ -52,9 +60,12 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 BankRoll. Built with clarity and care.</p>
   </footer>
-  
+
+  <!-- Scripts -->
+  <script src="darkmode.js"></script>
 </body>
 </html>

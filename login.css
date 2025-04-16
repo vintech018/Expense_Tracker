@@ -280,3 +280,16 @@ footer i.fa-heart {
   50% { transform: scale(1.2); }
   100% { transform: scale(1); }
 }
+
+
+.error-message {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff6b6b;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.3s ease;
+}

@@ -26,59 +26,189 @@
 
   <main class="tracker-container">
     <div class="tracker-nav">
-      <button class="nav-btn" onclick="switchSection('log')">Log Expenses</button>
-      <button class="nav-btn" onclick="switchSection('history')">Transaction History</button>
-      <button class="nav-btn" onclick="switchSection('summary')">Spending Summary</button>
+      <button class="nav-btn" data-section="log">
+        <i class="fas fa-plus-circle"></i>
+        <span>Log Expenses</span>
+      </button>
+      <button class="nav-btn" data-section="history">
+        <i class="fas fa-history"></i>
+        <span>Transaction History</span>
+      </button>
+      <button class="nav-btn" data-section="summary">
+        <i class="fas fa-chart-pie"></i>
+        <span>Spending Summary</span>
+      </button>
+      <button class="nav-btn" data-section="contact">
+        <i class="fas fa-envelope"></i>
+        <span>Contact Us</span>
+      </button>
     </div>
 
-    <!-- Log Expenses Section -->
-    <section id="log" class="tracker-section">
-      <h2>Log a New Expense</h2>
+    <section id="log" class="tracker-section hidden">
+      <h2><i class="fas fa-plus-circle"></i> Log a New Expense</h2>
       <form id="expenseForm">
-        <input type="number" id="amount" placeholder="Amount" required />
-        <select id="category" required>
-          <option value="">Select Category</option>
-          <option>Groceries</option>
-          <option>Transport</option>
-          <option>Food & Dining</option>
-          <option>Rent & Utilities</option>
-          <option>Health & Fitness</option>
-          <option>Entertainment</option>
-          <option>Miscellaneous</option>
-        </select>
-        <input type="text" id="description" placeholder="Description (optional)" />
-        <input type="date" id="date" required />
-        <button type="submit">Add Expense</button>
+        <div class="form-group">
+          <label for="amount">Amount</label>
+          <div class="input-with-icon">
+            <i class="fas fa-rupee-sign"></i>
+            <input id="amount" type="number" placeholder="Enter amount" required />
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="category">Category</label>
+          <div class="select-wrapper">
+            <select id="category" required>
+              <option value="">Select Category</option>
+              <option value="Groceries">Groceries</option>
+              <option value="Transport">Transport</option>
+              <option value="Food & Dining">Food & Dining</option>
+              <option value="Rent & Utilities">Rent & Utilities</option>
+              <option value="Health & Fitness">Health & Fitness</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="description">Description</label>
+          <div class="input-with-icon">
+            <i class="fas fa-pen"></i>
+            <input id="description" type="text" placeholder="What was this for?" />
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="date">Date</label>
+          <div class="input-with-icon">
+            <i class="fas fa-calendar"></i>
+            <input id="date" type="date" required />
+          </div>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-save"></i> Add Expense
+        </button>
       </form>
     </section>
 
-    <!-- Transaction History Section -->
     <section id="history" class="tracker-section hidden">
-      <h2>Transaction History</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Category</th>
-            <th>Description</th>
-            <th>Amount</th>
-          </tr>
-        </thead>
-        <tbody id="transactionTable">
-          <tr><td colspan="4">No data yet.</td></tr>
-        </tbody>
-      </table>
+      <h2><i class="fas fa-history"></i> Transaction History</h2>
+      <div class="history-controls">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="searchTransactions" placeholder="Search transactions..." />
+        </div>
+        <button id="clearHistory" class="action-btn">
+          <i class="fas fa-trash"></i> Clear All
+        </button>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Date <i class="fas fa-sort"></i></th>
+              <th>Category <i class="fas fa-sort"></i></th>
+              <th>Description</th>
+              <th>Amount <i class="fas fa-sort"></i></th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="transactionTable">
+            <tr><td colspan="5" class="empty-state">No transactions recorded yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <!-- Spending Summary Section -->
     <section id="summary" class="tracker-section hidden">
-      <h2>Spending Summary</h2>
-      <canvas id="pieChart"></canvas>
+      <h2><i class="fas fa-chart-pie"></i> Spending Summary</h2>
+      <div class="summary-wrapper">
+        <div class="chart-container">
+          <canvas id="pieChart"></canvas>
+        </div>
+        <div class="stats-container">
+          <div class="stat-card total">
+            <h3>Total Spent</h3>
+            <p id="totalAmount">₹0.00</p>
+          </div>
+          <div class="stat-card">
+            <h3>Most Expensive Category</h3>
+            <p id="topCategory">N/A</p>
+          </div>
+          <div class="stat-card">
+            <h3>Transactions</h3>
+            <p id="totalTransactions">0</p>
+          </div>
+        </div>
+      </div>
+      <div class="category-breakdown">
+        <h3>Category Breakdown</h3>
+        <div id="categoryList" class="category-list"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="tracker-section hidden">
+      <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="contact-avatar">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <h3>Vaibhav</h3>
+          <p>Founder & CEO</p>
+          <a href="mailto:vaibhav@bankroll.com">
+            <i class="fas fa-envelope"></i> vaibhav@bankroll.com
+          </a>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-avatar">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <h3>Maanit</h3>
+          <p>Lead Developer</p>
+          <a href="mailto:maanit@bankroll.com">
+            <i class="fas fa-envelope"></i> maanit@bankroll.com
+          </a>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-avatar">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <h3>Medhansh</h3>
+          <p>Product & UX Design</p>
+          <a href="mailto:medhansh@bankroll.com">
+            <i class="fas fa-envelope"></i> medhansh@bankroll.com
+          </a>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-avatar">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <h3>Dhruv</h3>
+          <p>Finance & Strategy</p>
+          <a href="mailto:dhruv@bankroll.com">
+            <i class="fas fa-envelope"></i> dhruv@bankroll.com
+          </a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 BankRoll. Built with clarity and care.</p>
+    <div class="footer-content">
+      <p>&copy; 2025 BankRoll. Built with clarity and care.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

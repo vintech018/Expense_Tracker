@@ -5,8 +5,8 @@ const passwordInput = document.querySelector('#password');
 togglePassword.addEventListener('click', function() {
     const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
     passwordInput.setAttribute('type', type);
-    this.classList.toggle('fa-eye');
-    this.classList.toggle('fa-eye-slash');
+    this.querySelector('i').classList.toggle('fa-eye');
+    this.querySelector('i').classList.toggle('fa-eye-slash');
 });
 
 // Remember me functionality
@@ -30,39 +30,25 @@ function handleLogin(event) {
     const password = passwordInput.value.trim();
     
     // Basic validation
+    if (!email || !password) {
+        showError('Please fill in all fields');
+        return false;
+    }
+
     if (!isValidEmail(email)) {
         showError('Please enter a valid email address');
         return false;
     }
     
-    if (password.length < 6) {
-        showError('Password must be at least 6 characters long');
-        return false;
-    }
-    
-    // Handle remember me
+    // Save email if remember me is checked
     if (rememberCheckbox.checked) {
         localStorage.setItem('rememberedEmail', email);
     } else {
         localStorage.removeItem('rememberedEmail');
     }
-    
-    // Show loading state
-    const loginBtn = document.querySelector('.login-btn');
-    const originalText = loginBtn.innerHTML;
-    loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
-    loginBtn.disabled = true;
-    
-    // Simulate API call (replace with actual API call)
-    setTimeout(() => {
-        // Success scenario (replace with actual authentication logic)
-        window.location.href = 'dashboard.html';
-        
-        // Error scenario example:
-        // showError('Invalid credentials');
-        // loginBtn.innerHTML = originalText;
-        // loginBtn.disabled = false;
-    }, 1500);
+
+    // Redirect to tracker
+    window.location.href = 'tracker.html';
     
     return false;
 }
@@ -83,7 +69,7 @@ function showError(message) {
     // Create and show new error message
     const errorDiv = document.createElement('div');
     errorDiv.className = 'error-message';
-    errorDiv.innerHTML = <i class="fas fa-exclamation-circle"></i> ${message};
+    errorDiv.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${message}`;
     
     const form = document.querySelector('.login-form');
     form.insertBefore(errorDiv, form.firstChild);
@@ -95,7 +81,7 @@ function showError(message) {
     }, 3000);
 }
 
-// Add these styles to your CSS
+// Add error message styles to your CSS file instead of injecting them
 const style = document.createElement('style');
 style.textContent = `
     .error-message {

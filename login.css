@@ -7,7 +7,7 @@ body {
   background-size: cover;
   color: #e3e3e3;
   margin: 0;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: all 0.4s ease;
   position: relative;
   overflow-x: hidden;
 }
@@ -24,7 +24,7 @@ body::before {
 header, footer {
   background-color: rgba(0, 0, 0, 0.95);
   padding: 20px 60px;
-  border-bottom: 1px solid #FFD700;
+  border-bottom: 2px solid #FFD700;
   color: #FFD700;
   display: flex;
   justify-content: space-between;
@@ -32,6 +32,7 @@ header, footer {
   flex-wrap: wrap;
   z-index: 2;
   position: relative;
+  box-shadow: 0 2px 15px rgba(255, 215, 0, 0.1);
 }
 
 .logo-section {
@@ -87,70 +88,103 @@ nav a.active {
   padding: 40px 20px;
   position: relative;
   z-index: 1;
+  backdrop-filter: blur(5px);
 }
 
 .login-form {
   background-color: rgba(26, 26, 26, 0.9);
   padding: 40px;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 215, 0, 0.2);
-  box-shadow: 0 5px 25px rgba(255, 215, 0, 0.15);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 215, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.15);
   max-width: 400px;
   width: 100%;
   z-index: 2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.login-form h2 {
-  text-align: center;
-  color: #FFD700;
-  margin-bottom: 30px;
+.login-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.2);
 }
 
 .input-group {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  position: relative;
 }
 
 .input-group label {
   display: block;
-  margin-bottom: 8px;
-  color: #e3c9d9;
+  margin-bottom: 10px;
+  color: #FFD700;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .input-group input {
   width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  background-color: #333;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 215, 0, 0.1);
+  background-color: rgba(51, 51, 51, 0.8);
   color: #fff;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: rgba(255, 215, 0, 0.5);
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
 }
 
 .login-btn {
   width: 100%;
-  padding: 12px;
-  background-color: #FFD700;
+  padding: 15px;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
   color: #000;
   border: none;
-  border-radius: 25px;
+  border-radius: 12px;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1.1em;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .login-btn:hover {
-  background-color: #e3c000;
+  background: linear-gradient(135deg, #FFA500, #FFD700);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
 }
 
-/* Link Fix: Make "Sign up" yellow */
+.login-form p {
+  margin-top: 25px;
+  text-align: center;
+  color: #e3e3e3;
+}
+
 .login-form p a {
   color: #FFD700;
   text-decoration: none;
   font-weight: 600;
+  position: relative;
+  padding-bottom: 2px;
 }
 
-.login-form p a:hover {
-  text-decoration: underline;
+.login-form p a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFD700;
+  transition: width 0.3s ease;
+}
+
+.login-form p a:hover::after {
+  width: 100%;
 }
 
 /* Dark Mode */
@@ -165,4 +199,84 @@ body.dark-mode .login-form {
 body.dark-mode input {
   background-color: #333;
   color: #f1f1f1;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #FFD700;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.1em;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e3e3e3;
+  cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #FFD700;
+}
+
+.forgot-link {
+  color: #FFD700;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+  color: #FFA500;
+}
+
+.login-form h2 i {
+  margin-right: 10px;
+  color: #FFD700;
+}
+
+.input-group label i {
+  margin-right: 8px;
+}
+
+.signup-text {
+  margin-top: 25px;
+  text-align: center;
+  color: #e3e3e3;
+}
+
+.signup-link i {
+  margin-right: 5px;
+}
+
+footer i.fa-heart {
+  color: #FFD700;
+  margin: 0 5px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }

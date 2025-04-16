@@ -3,54 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Login to BankRoll - Your Personal Finance Tracker" />
   <title>Login | BankRoll</title>
   <link rel="stylesheet" href="login.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-
   <header>
     <div class="logo-section">
-      <img src="logo.png" alt="BankRoll Logo" class="logo" />
+      <img src="logo.png" alt="BankRoll Logo" class="logo" width="50" height="50" />
       <h1 class="title">BankRoll</h1>
     </div>
 
-    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+      <i class="fas fa-moon"></i>
+    </button>
 
-    <nav>
+    <nav aria-label="Main navigation">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="login.html" class="active">Tracker</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="login.html" class="active"><i class="fas fa-chart-line"></i> Tracker</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="login-container">
     <form class="login-form" onsubmit="return handleLogin(event)">
-      <h2>Login to BankRoll</h2>
+      <h2><i class="fas fa-user-circle"></i> Welcome Back</h2>
       
       <div class="input-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" required />
+        <label for="email">
+          <i class="fas fa-envelope"></i> Email
+        </label>
+        <input 
+          type="email" 
+          id="email" 
+          placeholder="Enter your email"
+          autocomplete="email"
+          required 
+        />
       </div>
       
       <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" required />
+        <label for="password">
+          <i class="fas fa-lock"></i> Password
+        </label>
+        <div class="password-wrapper">
+          <input 
+            type="password" 
+            id="password" 
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required 
+          />
+          <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
       </div>
-      
-      <button type="submit" class="login-btn">Login</button>
 
-      <p>
-        Don’t have an account?
-        <a href="signup.html">Sign up</a>
+      <div class="remember-forgot">
+        <label class="remember-me">
+          <input type="checkbox" id="remember"> Remember me
+        </label>
+        <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
+      </div>
+      
+      <button type="submit" class="login-btn">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+
+      <p class="signup-text">
+        Don't have an account?
+        <a href="signup.html" class="signup-link">
+          <i class="fas fa-user-plus"></i> Sign up
+        </a>
       </p>
     </form>
   </main>
 
   <footer>
-    <p>&copy; 2025 BankRoll. Built with clarity and care.</p>
+    <p>&copy; 2025 BankRoll. Built with <i class="fas fa-heart"></i> and care.</p>
   </footer>
 
   <script src="darkmode.js"></script>

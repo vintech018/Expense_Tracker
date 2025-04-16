@@ -1,135 +1,116 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    if (!currentUser) return window.location.href = "login.html";
-  
-    const logoutButton = document.getElementById("logoutButton");
-    logoutButton.addEventListener("click", () => {
-      localStorage.removeItem("currentUser");
-      window.location.href = "login.html";
+  const buttons = document.querySelectorAll(".nav-btn");
+  const sections = document.querySelectorAll(".tracker-section");
+  const form = document.getElementById("expenseForm");
+  const transactionTable = document.getElementById("transactionTable");
+  const pieChartCanvas = document.getElementById("pieChart");
+
+  let transactions = [];
+  let pieChart = null;
+
+  // Section Switcher
+  function switchSection(id) {
+    sections.forEach(section => {
+      section.classList.add("hidden");
+      section.classList.remove("active");
     });
-  
-    const expenseForm = document.getElementById("expenseForm");
-    const descriptionInput = document.getElementById("description");
-    const amountInput = document.getElementById("amount");
-    const categoryInput = document.getElementById("category");
-    const transactionsList = document.getElementById("transactionsList");
-  
-    const incomeAmount = document.getElementById("incomeAmount");
-    const expenseAmount = document.getElementById("expenseAmount");
-    const totalAmount = document.getElementById("totalAmount");
-  
-    let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
-  
-    let chartInstance;
-  
-    function saveTransactions() {
-      localStorage.setItem("transactions", JSON.stringify(transactions));
-    }
-  
-    function renderTransactions() {
-      transactionsList.innerHTML = "";
-  
-      if (transactions.length === 0) {
-        transactionsList.innerHTML = "<li style='color: #888;'>No transactions yet.</li>";
-        return;
+
+    const target = document.getElementById(id);
+    if (target) {
+      target.classList.remove("hidden");
+      target.classList.add("active");
+
+      if (id === "summary") {
+        setTimeout(() => updatePieChart(), 150); // Allow canvas to render
       }
-  
-      transactions.slice().reverse().forEach((tx) => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-          <span>${tx.description} <small style="color: #94a3b8;">(${tx.category})</small></span>
-          <strong style="color: ${tx.category === 'income' ? '#16a34a' : '#f87171'}">
-            ${tx.category === 'income' ? '+' : '-'}₹${Math.abs(tx.amount).toFixed(2)}
-          </strong>
-        `;
-        transactionsList.appendChild(li);
-      });
     }
-  
-    function updateSummaries() {
-      let income = 0, expense = 0;
-  
-      transactions.forEach((tx) => {
-        if (tx.category === 'income') income += tx.amount;
-        else expense += tx.amount;
-      });
-  
-      const total = income - expense;
-  
-      incomeAmount.textContent = `₹${income.toFixed(2)}`;
-      expenseAmount.textContent = `₹${expense.toFixed(2)}`;
-      totalAmount.textContent = `₹${total.toFixed(2)}`;
+  }
+
+  // Attach globally so inline HTML onclick can use it
+  window.switchSection = switchSection;
+  switchSection("log"); // default section
+
+  // Form Handler
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const [amountInput, categoryInput, descInput, dateInput] = form.elements;
+
+    const transaction = {
+      amount: parseFloat(amountInput.value),
+      category: categoryInput.value,
+      description: descInput.value.trim() || "-",
+      date: dateInput.value
+    };
+
+    transactions.push(transaction);
+
+    updateTransactionTable();
+    form.reset();
+    switchSection("history");
+  });
+
+  // Update Table
+  function updateTransactionTable() {
+    transactionTable.innerHTML = "";
+
+    if (transactions.length === 0) {
+      transactionTable.innerHTML = "<tr><td colspan='4'>No data yet.</td></tr>";
+      return;
     }
-  
-    function updateChart() {
-      const categoryTotals = {};
-  
-      transactions.forEach((tx) => {
-        if (tx.category !== 'income') {
-          categoryTotals[tx.category] = (categoryTotals[tx.category] || 0) + tx.amount;
-        }
-      });
-  
-      const labels = Object.keys(categoryTotals);
-      const data = Object.values(categoryTotals);
-  
-      const backgroundColors = [
-        '#f87171', '#facc15', '#60a5fa', '#a78bfa', '#34d399', '#f472b6'
-      ];
-  
-      if (chartInstance) chartInstance.destroy();
-  
-      chartInstance = new Chart(document.getElementById("expenseChart"), {
-        type: 'pie',
-        data: {
-          labels,
-          datasets: [{
-            label: 'Expenses by Category',
-            data,
-            backgroundColor: backgroundColors,
-          }]
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            legend: {
-              labels: { color: '#e5e7eb' }
+
+    transactions.forEach(t => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${t.date}</td>
+        <td>${t.category}</td>
+        <td>${t.description}</td>
+        <td>₹${t.amount.toFixed(2)}</td>
+      `;
+      transactionTable.appendChild(row);
+    });
+  }
+
+  // Update Pie Chart
+  function updatePieChart() {
+    if (!pieChartCanvas || transactions.length === 0) return;
+
+    const totals = {};
+
+    transactions.forEach(t => {
+      if (!totals[t.category]) totals[t.category] = 0;
+      totals[t.category] += t.amount;
+    });
+
+    const labels = Object.keys(totals);
+    const data = Object.values(totals);
+
+    if (pieChart) pieChart.destroy();
+
+    pieChart = new Chart(pieChartCanvas, {
+      type: 'pie',
+      data: {
+        labels,
+        datasets: [{
+          label: 'Expenses',
+          data,
+          backgroundColor: [
+            '#FFD700', '#B8860B', '#DAA520', '#FFECB3', '#FFF8DC', '#FFC107', '#FFE082'
+          ],
+          borderColor: '#000',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            labels: {
+              color: document.body.classList.contains('dark-mode') ? '#FFD700' : '#333'
             }
           }
         }
-      });
-    }
-  
-    expenseForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-  
-      const description = descriptionInput.value.trim();
-      const amount = parseFloat(amountInput.value.trim());
-      const category = categoryInput.value;
-  
-      if (!description || isNaN(amount) || !category) {
-        return alert("Please fill all fields correctly.");
       }
-  
-      const newTransaction = {
-        id: Date.now(),
-        description,
-        amount: category === "income" ? amount : Math.abs(amount),
-        category,
-        date: new Date().toISOString()
-      };
-  
-      transactions.push(newTransaction);
-      saveTransactions();
-      renderTransactions();
-      updateSummaries();
-      updateChart();
-      expenseForm.reset();
     });
-  
-    // Init
-    renderTransactions();
-    updateSummaries();
-    updateChart();
-  });
-  
+  }
+});

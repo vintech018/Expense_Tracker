@@ -2,73 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BankRoll | Expense Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BankRoll Tracker</title>
   <link rel="stylesheet" href="tracker.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="tracker.js" defer></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
 </head>
 <body>
+
   <header>
     <div class="logo-section">
-      <img src="logo.png" alt="BankRoll Logo" />
-      <h1>BankRoll</h1>
+      <img src="logo.png" alt="BankRoll Logo" class="logo" />
+      <h1 class="title">BankRoll</h1>
     </div>
-    <button id="logoutButton">Logout</button>
+    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tracker.html" class="active">Tracker</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section class="dashboard">
-      <h2>Welcome Back 👋</h2>
-      <p style="color: #aaa;">Your financial kingdom in control</p>
+  <main class="tracker-container">
+    <div class="tracker-nav">
+      <button class="nav-btn" onclick="switchSection('log')">Log Expenses</button>
+      <button class="nav-btn" onclick="switchSection('history')">Transaction History</button>
+      <button class="nav-btn" onclick="switchSection('summary')">Spending Summary</button>
+    </div>
 
-      <!-- 🔢 Summary Cards -->
-      <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
-        <div class="summary-card">
-          <h3>Total</h3>
-          <p id="totalAmount">₹0.00</p>
-        </div>
-        <div class="summary-card" style="background-color: #174135;">
-          <h3>Income</h3>
-          <p id="incomeAmount">₹0.00</p>
-        </div>
-        <div class="summary-card" style="background-color: #43172e;">
-          <h3>Expenses</h3>
-          <p id="expenseAmount">₹0.00</p>
-        </div>
-      </div>
+    <!-- Log Expenses Section -->
+    <section id="log" class="tracker-section">
+      <h2>Log a New Expense</h2>
+      <form id="expenseForm">
+        <input type="number" id="amount" placeholder="Amount" required />
+        <select id="category" required>
+          <option value="">Select Category</option>
+          <option>Groceries</option>
+          <option>Transport</option>
+          <option>Food & Dining</option>
+          <option>Rent & Utilities</option>
+          <option>Health & Fitness</option>
+          <option>Entertainment</option>
+          <option>Miscellaneous</option>
+        </select>
+        <input type="text" id="description" placeholder="Description (optional)" />
+        <input type="date" id="date" required />
+        <button type="submit">Add Expense</button>
+      </form>
+    </section>
 
-      <!-- 🧾 Expense Form -->
-      <div style="margin-top: 2rem;">
-        <h3>Add Expense</h3>
-        <form id="expenseForm" style="display: flex; flex-direction: column; gap: 1rem;">
-          <input type="text" id="description" placeholder="Description" required />
-          <input type="number" id="amount" placeholder="Amount" required />
-          <select id="category" required>
-            <option value="" disabled selected>Select Category</option>
-            <option value="income">Income</option>
-            <option value="food">Food</option>
-            <option value="transport">Transport</option>
-            <option value="entertainment">Entertainment</option>
-            <option value="utilities">Utilities</option>
-            <option value="other">Other</option>
-          </select>
-          <button type="submit">Add</button>
-        </form>
-      </div>
+    <!-- Transaction History Section -->
+    <section id="history" class="tracker-section hidden">
+      <h2>Transaction History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="transactionTable">
+          <tr><td colspan="4">No data yet.</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-      <!-- 💸 Recent Transactions -->
-      <div style="margin-top: 2rem;">
-        <h3>Recent Transactions</h3>
-        <ul id="transactionsList"></ul>
-      </div>
-
-      <!-- 📊 Pie Chart -->
-      <div style="margin-top: 2rem;">
-        <h3>Spending Breakdown</h3>
-        <canvas id="expenseChart" width="400" height="200"></canvas>
-      </div>
+    <!-- Spending Summary Section -->
+    <section id="summary" class="tracker-section hidden">
+      <h2>Spending Summary</h2>
+      <canvas id="pieChart"></canvas>
     </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 BankRoll. Built with clarity and care.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="darkmode.js"></script>
+  <script src="tracker.js"></script>
 </body>
 </html>

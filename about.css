@@ -197,6 +197,11 @@ footer {
   border-top: 1px solid #FFD700;
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
 }
+footer i.fa-heart {
+  color: #FFD700;
+  margin: 0 5px;
+  animation: pulse 1.5s infinite;
+}
 
 footer .social-links {
   display: flex;

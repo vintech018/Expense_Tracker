@@ -205,7 +205,11 @@ footer {
   color: #e3e3e3;
   border-top: 1px solid #FFD700;
 }
-
+footer i.fa-heart {
+  color: #FFD700;
+  margin: 0 5px;
+  animation: pulse 1.5s infinite;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   header {

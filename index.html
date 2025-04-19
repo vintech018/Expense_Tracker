@@ -33,41 +33,113 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-text">
+    <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
       <h2>Take Control of Your Finances</h2>
       <p>BankRoll helps you track, manage, and grow your money smarter than ever before.</p>
-      <a href="login.html" class="cta-button">Start Tracking</a>
-    </div>
-    <div class="hero-image">
-      <img src="finance-animation.gif" alt="Finance Animation" />
+      <div class="cta-buttons">
+        <a href="login.html" class="cta-button primary">Start Tracking</a>
+        <a href="about.html" class="cta-button secondary">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">10K+</span>
+          <span class="stat-label">Active Users</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">$2M+</span>
+          <span class="stat-label">Tracked Monthly</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Features -->
-  <section class="features">
-    <div class="feature">
-      <i class="fas fa-chart-pie"></i>
-      <h3>Visual Insights</h3>
-      <p>Graphs that help you understand your spending patterns in seconds.</p>
+  <section class="features-section">
+    <h2 class="section-title" data-aos="fade-up">Why Choose BankRoll?</h2>
+    <div class="features">
+      <div class="feature" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-chart-pie"></i>
+        <h3>Visual Insights</h3>
+        <p>Graphs that help you understand your spending patterns in seconds.</p>
+      </div>
+      <div class="feature" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-lock"></i>
+        <h3>Secure</h3>
+        <p>Your financial data stays yours — encrypted and protected.</p>
+      </div>
+      <div class="feature" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>On-the-Go</h3>
+        <p>Track your expenses from anywhere on your phone or desktop.</p>
+      </div>
     </div>
-    <div class="feature">
-      <i class="fas fa-lock"></i>
-      <h3>Secure</h3>
-      <p>Your financial data stays yours — encrypted and protected.</p>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <h2 class="section-title" data-aos="fade-up">What Our Users Say</h2>
+    <div class="testimonials">
+      <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+        <div class="quote"><i class="fas fa-quote-left"></i></div>
+        <p>BankRoll changed how I manage my finances. I've saved over $300 monthly since I started using it!</p>
+        <div class="testimonial-author">
+          <div class="author-name">Sarah J.</div>
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+        <div class="quote"><i class="fas fa-quote-left"></i></div>
+        <p>The visual breakdowns make it so easy to see where my money goes. Finally got my budget under control.</p>
+        <div class="testimonial-author">
+          <div class="author-name">Michael T.</div>
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="feature">
-      <i class="fas fa-mobile-alt"></i>
-      <h3>On-the-Go</h3>
-      <p>Track your expenses from anywhere on your phone or desktop.</p>
-    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" data-aos="zoom-in">
+    <h2>Ready to take control of your finances?</h2>
+    <p>Join thousands of users who have transformed their financial habits with BankRoll.</p>
+    <a href="login.html" class="cta-button primary">Get Started Now</a>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 BankRoll. Built with <i class="fas fa-heart"></i> and care.</p>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="logo.png" alt="BankRoll Logo" class="logo" />
+        <h2>BankRoll</h2>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="login.html">Tracker</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2024 BankRoll. Built with <i class="fas fa-heart"></i> and care.</p>
   </footer>
 
   <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      disable: 'mobile'
+    });
+  </script>
   <script src="darkmode.js"></script>
 </body>
 </html>

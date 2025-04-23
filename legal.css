@@ -137,11 +137,15 @@
   }
   
   .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem; 
+  margin-bottom: 2rem; 
+  padding: 0 1rem; 
+}
+
   
   .footer-logo {
     display: flex;

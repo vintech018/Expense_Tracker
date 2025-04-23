@@ -47,13 +47,17 @@
     font-family: 'Playfair Display', serif;
   }
   
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
-  }
+ nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 2.5rem; /* Same as 40px */
+  margin: 0;
+  padding: 0;
+  justify-content: center; /* Helps in centering for small screens */
+  align-items: center;
+}
+
   
   nav a {
     text-decoration: none;

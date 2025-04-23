@@ -130,11 +130,15 @@
   
   /* Footer styles from index.css */
   footer {
-    background-color: rgba(0, 0, 0, 0.95);
-    color: var(--text-light);
-    border-top: 1px solid var(--primary);
-    padding: 40px 60px 20px;
-  }
+  background-color: rgba(0, 0, 0, 0.95);
+  color: var(--text-light);
+  border-top: 1px solid var(--primary);
+  padding: 2.5rem 3.75rem 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.3); /* Adds visual depth */
+}
+
   
   .footer-content {
   display: flex;
@@ -182,15 +186,27 @@
   
   /* Responsive Design */
   @media (max-width: 768px) {
-    header {
-      padding: 20px 30px;
-      flex-direction: column;
-      gap: 20px;
-    }
-  
-    nav ul {
-      gap: 20px;
-    }
+  header {
+    flex-direction: column;
+    align-items: flex-start; /* Aligns content to the left for a cleaner mobile look */
+    padding: 1.5rem 1.5rem;
+    gap: 1.25rem;
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack nav items vertically on small screens */
+    gap: 1rem;
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  nav a {
+    width: 100%;
+    display: block;
+    padding: 0.5rem 0;
+  }
+}
+
   
     .legal-content {
       margin: 40px auto;

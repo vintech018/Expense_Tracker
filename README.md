@@ -1,6 +1,6 @@
 💸 BankRoll - Expense Tracker
 
-![alt text](WhatsApp%20Image%202025-04-27%20at%2019.38.21_54ac278b.jpg)
+![alt text](image.png)
 
 BankRoll is a simple and intuitive web application designed to help users track and manage their daily expenses. It allows users to register, log in, and maintain a history of their financial transactions efficiently.
 

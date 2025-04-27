@@ -106,12 +106,16 @@ header {
 
 .form-group .input-with-icon,
 .form-group .input-with-icon.textarea-wrapper,
+.form-group .rating-wrapper {
+    margin-top: 8px; /* Adds nice spacing between label and field */
+}
 .form-group .select-wrapper {
     width: 100%;
     display: flex;
     align-items: center;
     position: relative;
 }
+
 
 .input-with-icon input,
 .input-with-icon textarea,

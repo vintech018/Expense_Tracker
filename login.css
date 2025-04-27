@@ -21,18 +21,40 @@ body::before {
   z-index: 0;
 }
 
-header, footer {
+/* Header styles */
+header {
   background-color: rgba(0, 0, 0, 0.95);
   padding: 20px 60px;
   border-bottom: 2px solid #FFD700;
   color: #FFD700;
   display: flex;
-  justify-content: space-between;  /* Changed from center to space-between */
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   z-index: 2;
   position: relative;
   box-shadow: 0 2px 15px rgba(255, 215, 0, 0.1);
+}
+
+/* Footer styles */
+footer {
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 20px 60px;
+  border-top: 2px solid #FFD700;
+  color: #FFD700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  box-shadow: 0 2px 15px rgba(255, 215, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .logo-section {

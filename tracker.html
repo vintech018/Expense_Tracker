@@ -42,6 +42,10 @@
         <i class="fas fa-envelope"></i>
         <span>Contact Us</span>
       </button>
+      <button class="nav-btn" data-section="feedback">
+        <i class="fas fa-comment"></i>
+        <span>Feedback</span>
+      </button>
     </div>
 
     <section id="log" class="tracker-section hidden">
@@ -202,6 +206,36 @@
           </a>
         </div>
       </div>
+    </section>
+    <section id="feedback" class="tracker-section hidden">
+        <h2><i class="fas fa-comment"></i> Share Your Feedback</h2>
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="feedbackType">Type of Feedback</label>
+                <div class="select-wrapper">
+                    <select id="feedbackType" required>
+                        <option value="">Select Type</option>
+                        <option value="suggestion">Suggestion</option>
+                        <option value="bug">Bug Report</option>
+                        <option value="feature">Feature Request</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="feedbackMessage">Your Message</label>
+                <div class="input-with-icon">
+                    <i class="fas fa-pen"></i>
+                    <textarea id="feedbackMessage" rows="4" placeholder="Tell us what you think..." required></textarea>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Send Feedback
+            </button>
+        </form>
     </section>
   </main>
 

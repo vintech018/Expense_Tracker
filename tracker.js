@@ -518,3 +518,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Feedback form handling
+document.getElementById('feedbackForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const feedbackType = document.getElementById('feedbackType').value;
+    const feedbackMessage = document.getElementById('feedbackMessage').value;
+    
+    // Here you would typically send this to your backend
+    console.log('Feedback received:', { type: feedbackType, message: feedbackMessage });
+    
+    // Show success message
+    alert('Thank you for your feedback!');
+    
+    // Reset form
+    this.reset();
+});

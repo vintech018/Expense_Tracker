@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
 /* Reset */
 * {
   margin: 0;
@@ -26,6 +28,7 @@ html, body {
 
 body {
   font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
   background-color: #000;
   color: #e3e3e3;
   transition: background-color 0.4s ease, color 0.4s ease;
@@ -43,15 +46,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 25px 60px;
+  padding: 20px 60px;
   background: rgba(0, 0, 0, 0.95);
   border-bottom: 1px solid var(--primary);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-  flex-wrap: wrap;
-  gap: 20px;
   position: sticky;
   top: 0;
   z-index: 100;
+  height: 80px;
 }
 
 /* Logo Section */
@@ -61,19 +63,37 @@ header {
 }
 
 .logo {
-  width: 50px;
+  width: 45px;
+  height: 45px;
   margin-right: 15px;
-  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+  filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
 }
 
 .title {
-  color: var(--primary);
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
   font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 2px;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 1.05rem;
+  position: relative;
+  transition: color var(--transition-speed) ease;
 }
 
 /* Dark Mode Toggle */
@@ -81,9 +101,38 @@ header {
   background: none;
   border: none;
   font-size: 1.5rem;
-  cursor: pointer;
   color: var(--primary);
-  transition: transform 0.3s ease;
+  cursor: pointer;
+  transition: transform var(--transition-speed) ease;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 30px;
+    height: auto;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  nav ul {
+    gap: 20px;
+  }
 }
 
 .dark-mode-toggle:hover {

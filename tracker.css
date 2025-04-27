@@ -108,10 +108,11 @@ footer {
 
 .title {
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
+  font-size: 36px;
+  font-weight: 700;
   color: var(--primary);
   letter-spacing: 2px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.4);
 }
 
 /* === Navigation === */

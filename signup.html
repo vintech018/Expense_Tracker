@@ -3,58 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign up for BankRoll - Your Personal Finance Tracker" />
   <title>Sign Up | BankRoll</title>
   <link rel="stylesheet" href="login.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-
   <header>
     <div class="logo-section">
-      <img src="logo.png" alt="BankRoll Logo" class="logo" />
+      <img src="logo.png" alt="BankRoll Logo" class="logo" width="50" height="50" />
       <h1 class="title">BankRoll</h1>
     </div>
 
-    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+      <i class="fas fa-moon"></i>
+    </button>
 
-    <nav>
+    <nav aria-label="Main navigation">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="login.html" class="active">Tracker</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="login.html"><i class="fas fa-chart-line"></i> Tracker</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="login-container">
     <form class="login-form" onsubmit="return handleSignup(event)">
-      <h2>Create Your Account</h2>
+      <h2 style="text-align: center; margin-bottom: 40px;"><i class="fas fa-user-plus"></i> Create Account</h2>
+      
+      <div class="input-group" style="margin-bottom: 35px;">
+        <label for="name">
+          <i class="fas fa-user"></i> Full Name
+        </label>
+        <input 
+          type="text" 
+          id="name" 
+          placeholder="Enter your full name"
+          autocomplete="name"
+          required 
+        />
+      </div>
 
-      <div class="input-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" required />
+      <div class="input-group" style="margin-bottom: 35px;">
+        <label for="email">
+          <i class="fas fa-envelope"></i> Email
+        </label>
+        <input 
+          type="email" 
+          id="email" 
+          placeholder="Enter your email"
+          autocomplete="email"
+          required 
+        />
+      </div>
+
+      <div class="input-group" style="margin-bottom: 35px;">
+        <label for="password">
+          <i class="fas fa-lock"></i> Password
+        </label>
+        <div class="password-wrapper">
+          <input 
+            type="password" 
+            id="password" 
+            placeholder="Create a strong password"
+            autocomplete="new-password"
+            required 
+          />
+          <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
       </div>
 
       <div class="input-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" required />
+        <label for="confirm-password">
+          <i class="fas fa-lock"></i> Confirm Password
+        </label>
+        <div class="password-wrapper">
+          <input 
+            type="password" 
+            id="confirm-password" 
+            placeholder="Confirm your password"
+            autocomplete="new-password"
+            required 
+          />
+          <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
       </div>
 
-      <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" required />
-      </div>
+      <button type="submit" class="login-btn">
+        <i class="fas fa-user-plus"></i> Create Account
+      </button>
 
-      <button type="submit" class="login-btn">Sign Up</button>
-
-      <p style="margin-top: 15px; text-align: center;">
-        Already have an account? <a href="login.html">Log in</a>
+      <p class="signup-text">
+        Already have an account? 
+        <a href="login.html" class="signup-link">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </a>
       </p>
     </form>
   </main>
 
   <footer>
-    <p>&copy; 2025 BankRoll. Built with clarity and care.</p>
+    <p>&copy; 2025 BankRoll. Built with <i class="fas fa-heart"></i> and care.</p>
   </footer>
 
   <script src="darkmode.js"></script>

@@ -1,15 +1,15 @@
 /* === Base Styles === */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
 
 :root {
-  --primary: #FFD700;
-  --primary-dark: #DAA520;
-  --primary-light: #FFF8DC;
+  --primary: #ffd700;
+  --primary-dark: #daa520;
+  --primary-light: #fff8dc;
   --dark-bg: #121212;
   --dark-surface: #1e1e1e;
   --dark-surface-light: #2d2d2d;
   --text-light: #e3e3e3;
-  --text-gold: #FFD700;
+  --text-gold: #ffd700;
   --border-radius: 12px;
   --transition-speed: 0.3s;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: var(--dark-bg);
   color: var(--text-light);
   margin: 0;
@@ -30,7 +30,10 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
@@ -52,7 +55,8 @@ h3 {
 }
 
 /* === Header & Footer === */
-header, footer {
+header,
+footer {
   background-color: var(--dark-surface);
   padding: 20px 60px;
   border-bottom: 2px solid var(--primary);
@@ -87,7 +91,8 @@ footer {
 .social-links a {
   color: var(--primary);
   font-size: 1.25rem;
-  transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+  transition: transform var(--transition-speed) ease,
+    color var(--transition-speed) ease;
 }
 
 .social-links a:hover {
@@ -107,7 +112,7 @@ footer {
 }
 
 .title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 36px;
   font-weight: 700;
   color: var(--primary);
@@ -258,11 +263,13 @@ label {
   color: var(--primary);
 }
 
-.input-with-icon, .select-wrapper {
+.input-with-icon,
+.select-wrapper {
   position: relative;
 }
 
-.input-with-icon i, .select-wrapper i {
+.input-with-icon i,
+.select-wrapper i {
   position: absolute;
   left: 15px;
   top: 50%;
@@ -276,7 +283,8 @@ label {
   pointer-events: none;
 }
 
-form input, form select {
+form input,
+form select {
   width: 100%;
   padding: 15px 15px 15px 45px;
   border-radius: var(--border-radius);
@@ -284,10 +292,37 @@ form input, form select {
   background-color: var(--dark-surface-light);
   color: var(--text-light);
   font-size: 1rem;
-  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  transition: border-color var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
 }
 
-form input:focus, form select:focus {
+/* Feedback Section Styles - These should be separate */
+#feedback textarea {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  background-color: var(--dark-surface-light);
+  color: var(--text-light);
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+#feedback textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+}
+
+#feedback .input-with-icon i {
+  top: 15px;
+  transform: none;
+}
+
+form input:focus,
+form select:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
@@ -307,7 +342,8 @@ form input::placeholder {
   font-size: 1rem;
   cursor: pointer;
   width: 100%;
-  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+  transition: background-color var(--transition-speed) ease,
+    transform var(--transition-speed) ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -393,7 +429,8 @@ table {
   color: var(--text-light);
 }
 
-th, td {
+th,
+td {
   padding: 15px;
   text-align: left;
   border-bottom: 1px solid rgba(255, 215, 0, 0.2);
@@ -571,28 +608,29 @@ tr:hover {
 
 /* === Responsive Adjustments === */
 @media (max-width: 768px) {
-  header, footer {
+  header,
+  footer {
     padding: 15px 20px;
   }
-  
+
   .tracker-nav {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .nav-btn {
     flex-direction: row;
     justify-content: center;
   }
-  
+
   .summary-wrapper {
     flex-direction: column;
   }
-  
+
   .tracker-section {
     padding: 20px 15px;
   }
-  
+
   .contact-cards {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
@@ -602,7 +640,7 @@ tr:hover {
   nav ul {
     gap: 15px;
   }
-  
+
   .contact-cards {
     grid-template-columns: 1fr;
   }

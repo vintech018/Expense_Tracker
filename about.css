@@ -351,3 +351,61 @@ body.dark-mode #darkModeToggle {
   color: #000;
   background-color: #ffd700;
 }
+
+.modal-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.skill-tag {
+  background: rgba(255, 215, 0, 0.1);
+  color: #ffd700;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(255, 215, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.quote {
+  font-style: italic;
+  position: relative;
+  padding: 0 20px;
+}
+
+.quote::before,
+.quote::after {
+  content: '"';
+  font-size: 1.5em;
+  color: #ffd700;
+  position: absolute;
+}
+
+.quote::before {
+  left: 0;
+  top: -5px;
+}
+
+.quote::after {
+  right: 0;
+  bottom: -5px;
+}
+
+.modal-orb {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #ffd700, #ffa500);
+  border-radius: 50%;
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  filter: blur(20px);
+  opacity: 0.5;
+}

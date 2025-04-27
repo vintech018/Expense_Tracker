@@ -473,66 +473,16 @@ footer {
   background-color: rgba(0, 0, 0, 0.95);
   color: #e3e3e3;
   border-top: 1px solid var(--primary);
-  padding: 60px 60px 30px;
-}
-
-.footer-content {
+  padding: 20px;
+  text-align: center;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.footer-logo {
-  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 15px;
-}
-
-.footer-logo .logo {
-  width: 40px;
-}
-
-.footer-logo h2 {
-  color: var(--primary);
-  font-size: 1.8em;
-}
-
-.footer-links {
-  display: flex;
-  gap: 30px;
-}
-
-.footer-links a {
-  color: #e3e3e3;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: var(--primary);
-}
-
-.social-links {
-  display: flex;
-  gap: 20px;
-}
-
-.social-links a {
-  color: var(--primary);
-  font-size: 1.5em;
-  transition: transform 0.3s ease;
-}
-
-.social-links a:hover {
-  transform: translateY(-5px);
 }
 
 .copyright {
-  text-align: center;
-  padding-top: 30px;
-  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  color: var(--primary);
+  margin: 0;
 }
 
 .copyright i.fa-heart {
@@ -545,121 +495,6 @@ footer {
   0% { transform: scale(1); }
   50% { transform: scale(1.2); }
   100% { transform: scale(1); }
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .hero {
-    padding: 60px 40px;
-  }
-  
-  .hero-text h2 {
-    font-size: 3em;
-  }
-  
-  .features-section,
-  .testimonials-section,
-  .cta-section {
-    padding: 80px 40px;
-  }
-}
-
-@media (max-width: 992px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    gap: 60px;
-  }
-  
-  .hero-stats {
-    justify-content: center;
-  }
-  
-  .cta-buttons {
-    justify-content: center;
-  }
-  
-  .hero-image-decoration {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    padding: 20px 30px;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  nav ul {
-    gap: 25px;
-  }
-  
-  .hero-text h2 {
-    font-size: 2.5em;
-  }
-  
-  .section-title {
-    font-size: 2em;
-  }
-  
-  .cta-section h2 {
-    font-size: 2.2em;
-  }
-  
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
-  }
-  
-  .footer-links {
-    flex-direction: column;
-    gap: 15px;
-  }
-}
-
-@media (max-width: 576px) {
-  header {
-    padding: 15px 20px;
-  }
-  
-  .title {
-    font-size: 28px;
-  }
-  
-  nav ul {
-    gap: 15px;
-  }
-  
-  .hero {
-    padding: 40px 20px;
-  }
-  
-  .hero-text h2 {
-    font-size: 2em;
-  }
-  
-  .hero-text p {
-    font-size: 1.1em;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .hero-stats {
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .features-section,
-  .testimonials-section,
-  .cta-section {
-    padding: 60px 20px;
-  }
 }
 
 /* Dark Mode Enhancements */

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankRoll - Feedback</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <img src="assets/logo.png" alt="BankRoll Logo" class="logo">
+            <h1 class="title">BankRoll</h1>
+        </div>
+        <button id="darkModeToggle" class="dark-mode-toggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <main class="feedback-container">
+        <section class="feedback-section">
+            <h2><i class="fas fa-comment-dots"></i> Share Your Feedback</h2>
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="feedbackType">Type of Feedback</label>
+                    <div class="select-wrapper">
+                        <select id="feedbackType" required>
+                            <option value="">Select Type</option>
+                            <option value="Bug Report">Bug Report</option>
+                            <option value="Feature Request">Feature Request</option>
+                            <option value="General Feedback">General Feedback</option>
+                            <option value="Suggestion">Suggestion</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feedbackTitle">Title</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-heading"></i>
+                        <input id="feedbackTitle" type="text" placeholder="Brief title for your feedback" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feedbackMessage">Your Message</label>
+                    <div class="input-with-icon textarea-wrapper">
+                        <i class="fas fa-pen-fancy"></i>
+                        <textarea id="feedbackMessage" rows="5" placeholder="Please describe your feedback in detail..." required></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feedbackRating">Rate Your Experience</label>
+                    <div class="rating-wrapper">
+                        <i class="fas fa-star" data-rating="1"></i>
+                        <i class="fas fa-star" data-rating="2"></i>
+                        <i class="fas fa-star" data-rating="3"></i>
+                        <i class="fas fa-star" data-rating="4"></i>
+                        <i class="fas fa-star" data-rating="5"></i>
+                        <input type="hidden" id="feedbackRating" value="0" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Submit Feedback
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 BankRoll. Built with <i class="fas fa-heart"></i> and care.</p>
+    </footer>
+
+    <script src="darkmode.js"></script>
+    <script src="feedback.js"></script>
+</body>
+</html>

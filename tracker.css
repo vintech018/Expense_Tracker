@@ -356,6 +356,11 @@ form input::placeholder {
   color: var(--text-light);
 }
 
+.history-actions {
+  display: flex;
+  gap: 10px;
+}
+
 .action-btn {
   background-color: rgba(255, 215, 0, 0.15);
   border: 1px solid var(--primary);

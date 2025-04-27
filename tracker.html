@@ -101,9 +101,14 @@
           <i class="fas fa-search"></i>
           <input type="text" id="searchTransactions" placeholder="Search transactions..." />
         </div>
-        <button id="clearHistory" class="action-btn">
-          <i class="fas fa-trash"></i> Clear All
-        </button>
+        <div class="history-actions">
+          <button id="downloadPDF" class="action-btn">
+            <i class="fas fa-download"></i> Download PDF
+          </button>
+          <button id="clearHistory" class="action-btn">
+            <i class="fas fa-trash"></i> Clear All
+          </button>
+        </div>
       </div>
       <div class="table-container">
         <table>
@@ -212,6 +217,8 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
   <script src="darkmode.js"></script>
   <script src="tracker.js"></script>
 </body>

@@ -27,7 +27,7 @@ header, footer {
   border-bottom: 2px solid #FFD700;
   color: #FFD700;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;  /* Changed to center */
   align-items: center;
   flex-wrap: wrap;
   z-index: 2;

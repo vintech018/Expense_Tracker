@@ -104,11 +104,12 @@ header {
     gap: 10px;
 }
 
-.form-group .input-with-icon,
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--primary);
+    font-weight: 500;} .input-with-icon,
 .form-group .input-with-icon.textarea-wrapper,
-.form-group .rating-wrapper {
-    margin-top: 8px; /* Adds nice spacing between label and field */
-}
 .form-group .select-wrapper {
     width: 100%;
     display: flex;

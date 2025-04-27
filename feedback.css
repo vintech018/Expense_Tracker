@@ -104,31 +104,18 @@ header {
     gap: 10px;
 }
 
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 10px;
-    color: var(--primary);
-    font-weight: 500;
-}
-
-.input-with-icon {
+.form-group .input-with-icon,
+.form-group .input-with-icon.textarea-wrapper,
+.form-group .select-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
     position: relative;
 }
 
-.input-with-icon i {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--primary);
-}
-
 .input-with-icon input,
-.input-with-icon textarea {
+.input-with-icon textarea,
+.select-wrapper select {
     width: 100%;
     padding: 15px 15px 15px 45px;
     border-radius: var(--border-radius);
@@ -138,10 +125,36 @@ header {
     font-size: 1rem;
 }
 
+.select-wrapper select {
+    padding: 15px 45px 15px 15px; /* Select specific padding */
+    appearance: none;
+    cursor: pointer;
+}
+
+.input-with-icon i,
+.select-wrapper i {
+    position: absolute;
+    color: var(--primary);
+}
+
+.input-with-icon i {
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.select-wrapper i {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
 .textarea-wrapper i {
     top: 15px;
     transform: none;
 }
+
 
 textarea {
     resize: vertical;

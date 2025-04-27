@@ -27,7 +27,7 @@ header, footer {
   border-bottom: 2px solid #FFD700;
   color: #FFD700;
   display: flex;
-  justify-content: center;  /* Changed to center */
+  justify-content: space-between;  /* Changed from center to space-between */
   align-items: center;
   flex-wrap: wrap;
   z-index: 2;
@@ -66,6 +66,23 @@ nav a {
   text-decoration: none;
   font-weight: 600;
   position: relative;
+  transition: color 0.3s ease;
+  padding: 5px 0;  /* Added padding to match other files */
+}
+
+nav a::before {  /* Added underline effect to match other files */
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #FFD700;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::before {
+  width: 100%;
 }
 
 nav a:hover,
@@ -79,21 +96,20 @@ nav a.active {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--primary);
-  transition: transform var(--transition-speed) ease;
+  color: #FFD700;
+  transition: transform 0.3s ease;
   padding: 5px;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static;  /* Changed from absolute to static */
+  transform: none;  /* Remove transform */
 }
 
 .dark-mode-toggle:hover {
-  transform: translateX(-50%) rotate(20deg);
+  transform: rotate(20deg);  /* Changed to match other files */
 }
 
 /* Login Form */

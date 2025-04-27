@@ -1,8 +1,9 @@
 💸 BankRoll - Expense Tracker
 
 <p align="center"> <img src="readme_logo.jpg" alt="BankRoll Logo" width="200"> </p>
-
-BankRoll is a simple and intuitive web application designed to help users track and manage their daily expenses. It allows users to register, log in, and maintain a history of their financial transactions efficiently.
+BankRoll is a simple and intuitive web application designed to help users track and manage daily expenses effortlessly.
+It allows users to register, log in, and maintain a history of their financial transactions with ease and speed.
+-----------------------------------------------------------------------------------------------------------------------
 
 ✨ Features
 
@@ -32,6 +33,15 @@ Get a colorful overview of your spending habits with beautiful pie charts and ba
 
 🎨 Minimalist UI/UX
 A clutter-free, modern, and visually appealing interface for a smooth experience.
+-----------------------------------------------------------------------------------------------------------------------
+
+🛠️ Tech Stack
+
+HTML5 — Structure
+CSS3 — Styling and Responsive Design
+JavaScript (Vanilla) — Logic, Interactivity, LocalStorage handling
+Chart.js — Visual Charts (Pie Charts, Bar Graphs)
+-----------------------------------------------------------------------------------------------------------------------
 
 🚀 How It Works
 Add your incomes and expenses.
@@ -41,3 +51,10 @@ Instantly track your balance and transaction history.
 Delete or update entries as needed.
 
 Keep full control of your finances — simple and fast!
+-----------------------------------------------------------------------------------------------------------------------
+
+🚀 Live Demo
+
+🔗 Check it out here: bankroll-18.vercel.app
+-----------------------------------------------------------------------------------------------------------------------
+

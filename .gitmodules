@@ -1,0 +1,3 @@
+[submodule "libs/Expense_Tracker"]
+	path = libs/Expense_Tracker
+	url = https://github.com/vintech018/Expense_Tracker.git

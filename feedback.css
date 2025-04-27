@@ -110,6 +110,7 @@ header {
     color: var(--primary);
     font-weight: 500;
 } .input-with-icon,
+
 .form-group .input-with-icon.textarea-wrapper,
 .form-group .select-wrapper {
     width: 100%;
@@ -117,6 +118,7 @@ header {
     align-items: center;
     position: relative;
 }
+
 
 .input-with-icon input,
 .input-with-icon textarea,

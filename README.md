@@ -5,6 +5,7 @@
 BankRoll is a simple and intuitive web application designed to help users track and manage their daily expenses. It allows users to register, log in, and maintain a history of their financial transactions efficiently.
 
 ✨ Features
+
 📝 Add Income & Expenses
 Quickly log your earnings and spendings with amount, description, and category details.
 
@@ -34,6 +35,9 @@ A clutter-free, modern, and visually appealing interface for a smooth experience
 
 🚀 How It Works
 Add your incomes and expenses.
+
 Instantly track your balance and transaction history.
+
 Delete or update entries as needed.
+
 Keep full control of your finances — simple and fast!
